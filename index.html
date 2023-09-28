@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="nhapdiem">
+        <select name="chon_khoi" id="select_khoi" onchange="selectInput()">
+            <option selected hidden disabled value="0">Vui lòng chọn khối</option>
+            <option value="1">Khối 1: Toán, Lý, Hóa</option>
+            <option value="2">Khối 2: Văn, Sử, Địa, Anh</option>
+        </select>
+
+        <div id="input_khoi1" class="input_khoi input_khoi1" style="display: none;">
+            <input id="input_diemtoan" class="input_diem" type="number" placeholder="Điểm Toán">
+            <input id="input_diemly" class="input_diem" type="number" placeholder="Điểm Lý">
+            <input id="input_diemhoa" class="input_diem" type="number" placeholder="Điểm Hóa">
+        </div>
+
+        <div id="input_khoi2" class="input_khoi input_khoi2" style="display: none;">
+            <input id="input_diemvan" class="input_diem" type="number" placeholder="Điểm Văn">
+            <input id="input_diemsu" class="input_diem" type="number" placeholder="Điểm Sử">
+            <input id="input_diemdia" class="input_diem" type="number" placeholder="Điểm Địa">
+            <input id="input_diemanh" class="input_diem" type="number" placeholder="Điểm Anh">
+        </div>
+    </form>
+    <section id="bangdiem">
+        <div id="khoiA" class="khoi">
+            <p class="khoi_title">Khối A</p>
+            <ul id="khoiA_list" class="list_diem" style="list-style: none;">
+                <li class="mon mon1">
+                    <div class="ten_mon" id="monA_1">
+                        <span class="mon_ne">Toán</span>
+                    </div>
+                    <span id="khoiA_1" class="diem"></span>
+                </li>
+                <li class="mon mon2">
+                    <div class="ten_mon" id="monA_2">
+                        <span class="mon_ne">Lý</span>
+                    </div>
+                    <span id="khoiA_2" class="diem"></span>
+                </li>
+                <li class="mon mon3">
+                    <div class="ten_mon" id="monA_3">
+                        <span class="mon_ne">Hóa</span>
+                    </div>
+                    <span id="khoiA_3" class="diem"></span>
+                </li>
+            </ul>
+            <span id="btn_A" class="btn_ne">Tính</span>
+            <div id="result_A" class="show_diem">Điểm trung bình khối A</div>
+        </div>
+
+        <div id="khoiB" class="khoi">
+            <p class="khoi_title">Khối B</p>
+            <ul id="khoiB_list" class="list_diem" style="list-style: none;">
+                <li class="mon mon1">
+                    <div class="ten_mon" id="monA_4">
+                        <span class="mon_ne">Văn</span>
+                    </div>
+                    <span id="khoiB_1" class="diem"></span>
+                </li>
+                <li class="mon mon2">
+                    <div class="ten_mon" id="monA_5">
+                        <span class="mon_ne">Sử</span>
+                    </div>
+                    <span id="khoiB_2" class="diem"></span>
+                </li>
+                <li class="mon mon3">
+                    <div class="ten_mon" id="monA_6">
+                        <span class="mon_ne">Địa</span>
+                    </div>
+                    <span id="khoiB_3" class="diem"></span>
+                </li>
+                <li class="mon mon4">
+                    <div class="ten_mon" id="monA_7">
+                        <span class="mon_ne">Anh</span>
+                    </div>
+                    <span id="khoiB_4" class="diem"></span>
+                </li>
+            </ul>
+            <span id="btn_B" class="btn_ne">Tính</span>
+            <div id="result_B" class="show_diem">Điểm trung bình khối B</div>
+        </div>
+    </section>
+
+
+
+
+    <!-- javascript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
