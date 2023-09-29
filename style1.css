@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#input {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+#input #input_text {
+    padding: 10px 0px 10px 10px;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+#card {
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card #card_content .text {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 600;
+    transition: all 0.5s linear;
+    transform: scale(1);
+    cursor: pointer;
+
+    margin-right: 3px;
+}
+
+#card #card_content .text:hover {
+    transition: all 0.5s linear;
+    transform: scale(1.8);
+    color: skyblue;
+}
