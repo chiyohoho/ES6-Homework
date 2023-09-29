@@ -51,30 +51,38 @@ const selectInput = () => {
 // ----------FUNCTION TÍNH ĐIỂM TRUNG BÌNH CÁC MÔN
 const tinhDiem = (...diemTrungBinh) => {
     const selectKhoi = Number(callElement("#select_khoi").value)
-    let diemToan = Number(callElement("#input_diemtoan").value)
-    let diemLy = Number(callElement("#input_diemly").value)
-    let diemHoa = Number(callElement("#input_diemhoa").value)
-    let diemVan = Number(callElement("#input_diemvan").value)
-    let diemSu = Number(callElement("#input_diemsu").value)
-    let diemDia = Number(callElement("#input_diemdia").value)
-    let diemAnh = Number(callElement("#input_diemanh").value)
-
 
     if (selectKhoi === 0) {
         alert("Vui lòng chọn 1 khối")
     } else {
-        if (diemToan && diemLy && diemHoa) {
-            diemTrungBinh = ((diemToan + diemLy + diemHoa) / 3).toFixed(2)
-            showKetQuaA.textContent = `Điểm trung bình khối A là : ${diemTrungBinh}`
+        let diemToan, diemLy, diemHoa, diemVan, diemSu, diemDia, diemAnh;
+
+        if (selectKhoi === 1) {
+            diemToan = Number(callElement("#input_diemtoan").value)
+            diemLy = Number(callElement("#input_diemly").value)
+            diemHoa = Number(callElement("#input_diemhoa").value)
+        } else {
+            diemVan = Number(callElement("#input_diemvan").value)
+            diemSu = Number(callElement("#input_diemsu").value)
+            diemDia = Number(callElement("#input_diemdia").value)
+            diemAnh = Number(callElement("#input_diemanh").value)
+        }
+
+        const dtbLenght = diemTrungBinh.length;
+        let diemTrungBinhValue = 0;
+
+        if (selectKhoi === 1 && diemToan && diemLy && diemHoa) {
+            diemTrungBinhValue = ((diemToan + diemLy + diemHoa) / dtbLenght).toFixed(2);
+            showKetQuaA.textContent = `Điểm trung bình khối A là : ${diemTrungBinhValue}`;
             percentToan.style.width = diemToan * 10 + "%"
             showDiemToan.textContent = `${diemToan}`
             percentLy.style.width = diemLy * 10 + "%"
             showDiemLy.textContent = `${diemLy}`
             percentHoa.style.width = diemHoa * 10 + "%"
             showDiemHoa.textContent = `${diemHoa}`
-        } else if (diemVan && diemSu && diemDia && diemAnh) {
-            diemTrungBinh = ((diemVan + diemSu + diemDia + diemAnh) / 4).toFixed(2)
-            showKetQuaB.textContent = `Điểm trung bình khối B là : ${diemTrungBinh}`
+        } else if (selectKhoi === 2 && diemVan && diemSu && diemDia && diemAnh) {
+            diemTrungBinhValue = ((diemVan + diemSu + diemDia + diemAnh) / dtbLenght).toFixed(2);
+            showKetQuaB.textContent = `Điểm trung bình khối B là : ${diemTrungBinhValue}`;
             percentVan.style.width = diemVan * 10 + "%"
             showDiemVan.textContent = `${diemVan}`
             percentSu.style.width = diemSu * 10 + "%"
@@ -84,7 +92,7 @@ const tinhDiem = (...diemTrungBinh) => {
             percentAnh.style.width = diemAnh * 10 + "%"
             showDiemAnh.textContent = `${diemAnh}`
         } else {
-            alert("Nhập điểm rồi vào mới tính được ba")
+            alert("Nhập đủ điểm rồi mới tính được ba")
         }
     }
 }
