@@ -1,14 +1,24 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-#add_product {
-    width: 40%;
-    margin: 20px auto;
+#product_food {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }
+
+#add_product {
+    width: 35%;
+    margin-top: 20px;
+    height: 600px;
+}
+
 
 #add_product .title {
     font-size: 20px;
@@ -45,6 +55,7 @@
     grid-area: 5 / span 2
 }
 
+
 #add_product #add_product_form .form_input label {
     font-size: 22px;
     font-weight: 400;
@@ -55,4 +66,222 @@
     font-size: 20px;
     font-weight: 400;
     padding: 5px 10px;
+
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    transition: all 0.2s linear;
+
+}
+
+#add_product #add_product_form .form_input .add_product_input:focus {
+    border: 1px solid black;
+    transition: all 0.2s linear;
+
+}
+
+#add_product #add_product_form .form_input #input_about::-webkit-scrollbar {
+    width: 12px;
+    /* Độ rộng của thanh cuộn */
+}
+
+#add_product #add_product_form .form_input #input_about::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Màu nền của track */
+}
+
+#add_product #add_product_form .form_input #input_abouttextarea::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Màu nền của thumb */
+    border-radius: 6px;
+    /* Độ cong của thumb */
+}
+
+#add_product #add_product_form .form_input #input_about::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Màu nền của thumb khi hover */
+}
+
+#add_product #add_product_form #add_product_btn {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+
+    color: white;
+    background: rgb(24, 247, 117);
+    border-radius: 5px;
+
+    grid-area: 6 / span 2;
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+}
+
+#add_product #add_product_form #add_product_btn:hover {
+    background: rgb(14, 243, 205);
+    transition: all 0.2s linear;
+
+}
+
+/* --------------INFO PRODUCT-------------- */
+#info_product {
+    width: 30%;
+    margin-top: 20px;
+    max-height: 600px;
+}
+
+#info_product .title_info {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0px 0px;
+}
+
+#info_product .title_img {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+}
+
+#info_product .title_detail #info_product_form {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    border: 1px solid #ccc;
+    border-radius: 0px 0px 4px 4px;
+    gap: 10px;
+    padding: 10px;
+}
+
+#info_product .title_detail #info_product_form .form_input {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#info_product .title_detail #info_product_form .form7 {
+    grid-area: 3 / span 3
+}
+
+#info_product .title_detail #info_product_form .form8 {
+    grid-area: 5 / span 2
+}
+
+#info_product .title_detail #info_product_form #info_product_btn {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+
+    color: white;
+    background: rgb(24, 247, 117);
+    border-radius: 5px;
+
+    grid-area: 6 / span 3;
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+}
+
+#info_product .title_detail #info_product_form #info_product_btn:hover {
+    background: rgb(14, 243, 205);
+    transition: all 0.2s linear;
+
+}
+
+#info_product .title_detail #info_product_form .form_input .add_product_input {
+    font-size: 18px;
+    font-weight: 500;
+
+    height: 25px;
+    padding-left: 5px;
+
+}
+
+#info_product .title_detail #info_product_form .form_input #info_about {
+    height: 65px;
+    overflow-y: scroll;
+}
+
+#info_product .title_detail #info_product_form .form_input #info_about::-webkit-scrollbar {
+    width: 12px;
+}
+
+#info_product .title_detail #info_product_form .form_input #info_about::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#info_product .title_detail #info_product_form .form_input #info_about::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+#info_product .title_detail #info_product_form .form_input #info_about::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+/* ---------------LIST FOOD-------------------- */
+#show_item_list {
+    width: 62.7%;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+
+#list_food {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+#list_food th,
+#list_food td {
+    padding: 10px 20px;
+    text-align: left;
+    white-space: nowrap;
+
+}
+
+#list_food th {
+    color: #2f425a;
+    font-weight: 600;
+    font-size: 20px;
+
+    background: #e9f4f9;
+}
+
+#list_food td {
+    font-weight: 500;
+    font-size: 18px;
+    border-top: 1px solid #ccc;
+}
+
+#show_item_list #tbody_item #category_item .btn_item {
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+#show_item_list #tbody_item #category_item .btn_delete:hover {
+    transition: all 0.3s linear;
+
+    color: rgb(252, 43, 78);
+}
+
+#show_item_list #tbody_item #category_item .btn_edit:hover {
+    transition: all 0.3s linear;
+
+    color: rgb(26, 248, 126);
 }

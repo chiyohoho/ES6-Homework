@@ -8,76 +8,171 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
-    <section id="add_product">
-        <div class="title">ADD FOOD FORM</div>
+    <div id="product_food">
+        <section id="add_product">
+            <div class="title">ADD FOOD FORM</div>
 
-        <form id="add_product_form">
-            <div class="form_input form1">
-                <label for="input_code">Mã món</label>
-                <input type="text" id="input_code" placeholder="Nhập ID" class="add_product_input">
+            <form id="add_product_form">
+                <div class="form_input form1">
+                    <label for="input_code">Mã món</label>
+                    <input type="text" id="input_code" placeholder="Nhập ID" class="add_product_input">
+                </div>
+
+                <div class="form_input form2">
+                    <label for="input_name">Tên món ăn</label>
+                    <input type="text" id="input_name" placeholder="Nhập tên món" class="add_product_input">
+                </div>
+
+                <div class="form_input form3">
+                    <label for="select_mon">Loại món ăn</label>
+                    <select name="" id="select_mon" class="add_product_input">
+                        <option selected hidden disabled value="0">Vui lòng chọn</option>
+                        <option value="1">Món chay</option>
+                        <option value="2">Món mặn</option>
+                    </select>
+                </div>
+
+                <div class="form_input form4">
+                    <label for="input_price">Giá món ăn</label>
+                    <input type="text" id="input_price" placeholder="Nhập giá món" class="add_product_input">
+                </div>
+
+                <div class="form_input form5">
+                    <label for="select_discount">Khuyến mãi (%)</label>
+                    <select name="" id="select_discount" class="add_product_input">
+                        <option selected hidden disabled value="0">Vui lòng chọn</option>
+                        <option value="1">10</option>
+                        <option value="2">20</option>
+                        <option value="3">30</option>
+                    </select>
+                </div>
+
+                <div class="form_input form6">
+                    <label for="select_status">Tình trạng món ăn</label>
+                    <select name="" id="select_status" class="add_product_input">
+                        <option selected hidden disabled value="0">Vui lòng chọn</option>
+                        <option value="1">Đã hết</option>
+                        <option value="2">Vẫn còn</option>
+                    </select>
+                </div>
+
+                <div class="form_input form7">
+                    <label for="input_img">Hình ảnh món ăn</label>
+                    <input type="text" id="input_img" placeholder="Nhập link hình ảnh" class="add_product_input">
+                </div>
+
+                <div class="form_input form8">
+                    <label for="input_about">Giới thiệu món ăn</label>
+                    <textarea type="text" id="input_about" class="add_product_input" style="resize: none"></textarea>
+                </div>
+
+                <span id="add_product_btn" onclick="addItemToReview()">THÊM MÓN</span>
+            </form>
+        </section>
+
+        <section id="info_product">
+            <div class="title_info">REVIEW YOUR FOOD</div>
+            <div class="title_img"
+                style="background-position: center; background-repeat: no-repeat; background-size: cover;">
+                <img id="info_image"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/-Insert_image_here-.svg/800px--Insert_image_here-.svg.png"
+                    alt=""
+                    style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
             </div>
+            <div class="title_detail">
+                <form id="info_product_form">
+                    <div class="form_input form1">
+                        <label for="info_id">Mã món ăn</label>
+                        <textarea type="text" disabled id="info_id" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
 
-            <div class="form_input form2">
-                <label for="input_name">Tên món ăn</label>
-                <input type="text" id="input_name" placeholder="Nhập tên món" class="add_product_input">
+                    <div class="form_input form2">
+                        <label for="info_name">Tên món ăn</label>
+                        <textarea type="text" disabled id="info_name" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <div class="form_input form3">
+                        <label for="info_type">Loại món ăn</label>
+                        <textarea type="text" disabled id="info_type" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <div class="form_input form4">
+                        <label for="info_price">Giá món ăn</label>
+                        <textarea type="text" disabled id="info_price" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <div class="form_input form5">
+                        <label for="info_discount">Khuyến mãi (%)</label>
+                        <textarea type="text" disabled id="info_discount" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <div class="form_input form6">
+                        <label for="info_status">Tình trạng món ăn</label>
+                        <textarea type="text" disabled id="info_status" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <div class="form_input form7">
+                        <label for="info_about">Mô tả món ăn</label>
+                        <textarea type="text" disabled id="info_about" class="add_product_input"
+                            style="resize: none"></textarea>
+                    </div>
+
+                    <span id="info_product_btn">DUYỆT MÓN</span>
+                </form>
             </div>
+        </section>
+    </div>
 
-            <div class="form_input form3">
-                <label for="select_mon">Loại món ăn</label>
-                <select name="" id="select_mon" class="add_product_input">
-                    <option selected hidden disabled value="0">Vui lòng chọn</option>
-                    <option value="1">Món chay</option>
-                    <option value="2">Món mặn</option>
-                </select>
-            </div>
+    <div id="show_item_list">
+        <table id="list_food">
+            <thead id="thead_title">
+                <tr id="category_title">
+                    <th>ID Món</th>
+                    <th>Hình Ảnh</th>
+                    <th>Tên Món</th>
+                    <th>Giá Món</th>
+                    <th>Loại Món</th>
+                    <th>Khuyến mãi</th>
+                    <th>Tình trạng</th>
+                    <th>Tùy chọn</th>
+                </tr>
+            </thead>
 
-            <div class="form_input form4">
-                <label for="input_price">Giá món ăn</label>
-                <input type="text" id="input_price" placeholder="Nhập giá món" class="add_product_input">
-            </div>
-
-            <div class="form_input form5">
-                <label for="select_discount">Khuyến mãi (%)</label>
-                <select name="" id="select_discount" class="add_product_input">
-                    <option selected hidden disabled value="0">Vui lòng chọn</option>
-                    <option value="1">10</option>
-                    <option value="2">20</option>
-                    <option value="3">30</option>
-                </select>
-            </div>
-
-            <div class="form_input form6">
-                <label for="select_status">Tình trạng món ăn</label>
-                <select name="" id="select_status" class="add_product_input">
-                    <option selected hidden disabled value="0">Vui lòng chọn</option>
-                    <option value="1">Đã hết</option>
-                    <option value="2">Vẫn còn</option>
-                </select>
-            </div>
-
-            <div class="form_input form7">
-                <label for="input_img">Hình ảnh món ăn</label>
-                <input type="text" id="input_img" placeholder="Nhập link hình ảnh" class="add_product_input">
-            </div>
-
-            <div class="form_input form8">
-                <label for="input_about">Giới thiệu món ăn</label>
-                <textarea type="text" id="input_about" class="add_product_input" style="resize: vertical"></textarea>
-            </div>
-
-            <span id="add_product_btn">THÊM MÓN</span>
-        </form>
-    </section>
-
-    <section id="info_product"></section>
+            <tbody id="tbody_item">
+                <!-- <tr id="category_item">
+                    <td>01</td>
+                    <td><img src="https://static.kfcvietnam.com.vn/images/category/lg/COMBO%201%20NGUOI.jpg" alt=""
+                            style="width: 50px; height: 30px;"></td>
+                    <td>KFC</td>
+                    <td>500,000</td>
+                    <td>Món mặn</td>
+                    <td>10%</td>
+                    <td>Đã hết</td>
+                    <td style="display: flex; gap: 12px;">
+                        <span class="material-symbols-outlined btn_item btn_delete">delete</span>
+                        <span class="material-symbols-outlined btn_item btn_edit">edit</span>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
 
 
 
     <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="main2.js"></script>
 </body>
 
