@@ -250,7 +250,7 @@
 #list_food th,
 #list_food td {
     padding: 10px 20px;
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
 
 }
