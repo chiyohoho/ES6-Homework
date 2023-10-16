@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+    margin-bottom: 70px;
 }
 
 #add_product {
@@ -200,14 +201,15 @@
     font-size: 18px;
     font-weight: 500;
 
-    height: 25px;
+    height: 30px;
     padding-left: 5px;
 
 }
 
 #info_product .title_detail #info_product_form .form_input #info_about {
-    height: 65px;
+    height: 78px;
     overflow-y: scroll;
+    border-radius: 3px;
 }
 
 #info_product .title_detail #info_product_form .form_input #info_about::-webkit-scrollbar {
@@ -231,12 +233,13 @@
 
 /* ---------------LIST FOOD-------------------- */
 #show_item_list {
-    width: 62.7%;
+    width: 67.7%;
     margin: 0 auto;
 
     border-radius: 5px;
     border: 1px solid #ccc;
-    overflow: hidden;
+
+    margin-bottom: 100px;
 }
 
 
@@ -284,4 +287,54 @@
     transition: all 0.3s linear;
 
     color: rgb(26, 248, 126);
+}
+
+#show_item_list #tbody_item #category_item .img_hover_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#show_item_list #tbody_item #category_item .img_hover {
+    position: relative;
+    width: 50px;
+    transition: all 0.1s ease;
+
+}
+
+#show_item_list #tbody_item #category_item .img_hover:hover {
+    transform: scale(10);
+    transition: all 0.1s ease;
+
+    z-index: 10;
+
+    border-radius: 1px;
+    overflow: hidden;
+
+}
+
+/* ----------Modal---------- */
+.modal-body .form_input {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.modal-body .form_input label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.modal-body .form_input .add_product_input {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 5px;
+    height: 30px;
+}
+
+.modal-body .form_input select {
+    height: 30px;
+}
+
+.modal-body .form_input #edit_about {
+    height: 60px;
 }
